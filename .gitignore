@@ -1,0 +1,22 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+*.test
+
+*.out
+
+go.work
+go.work.sum
+
+# env file
+.env
+
+dist/
+
+design.md
+feature.md
+dockboy.toml
+docs.md

@@ -164,6 +164,34 @@ func checkService(ctx context.Context, out io.Writer, docker *client.Client, ser
 				continue
 			}
 
+			if service.UpdateStatus == nil {
+				tasks, err := docker.TaskList(ctx, types.TaskListOptions{
+					Filters: filters.NewArgs(filters.Arg("service", serviceID)),
+				})
+				if err != nil {
+					fmt.Fprintf(out, "dockboy: task list error: %v\n", err)
+					continue
+				}
+
+				if len(tasks) == 0 {
+					continue
+				}
+
+				running := true
+				for _, task := range tasks {
+					if task.DesiredState == swarm.TaskStateRunning && task.Status.State != swarm.TaskStateRunning {
+						running = false
+						break
+					}
+				}
+
+				if running {
+					fmt.Fprintf(out, "dockboy: service '%s' is running.\n", service.Spec.Name)
+					close(done)
+					return
+				}
+			}
+
 			if service.UpdateStatus != nil && service.UpdateStatus.State != lastState {
 				switch service.UpdateStatus.State {
 				case swarm.UpdateStateCompleted:

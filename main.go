@@ -24,7 +24,7 @@ func main() {
 
 	app := &cli.App{
 		Name:    "dockboy",
-		Usage:   "Manage your SSH keys and remote machines",
+		Usage:   "Deploy your apps anywhere",
 		Version: version,
 		Flags: []cli.Flag{
 			&cli.BoolFlag{

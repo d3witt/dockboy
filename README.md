@@ -4,7 +4,7 @@
 [![Go Reference](https://pkg.go.dev/badge/github.com/d3witt/dockboy.svg)](https://pkg.go.dev/github.com/d3witt/dockboy)
 ![GitHub release](https://img.shields.io/github/v/release/d3witt/dockboy)
 
-Dock-Boy is a tiny deployment tool for small teams that works everywhere.
+Dock-Boy is a tiny deployment tool for small teams that works anywhere.
 
 Built on Docker Swarm and Caddy, it sets up everything automatically and gets your apps running with minimal fuss. No complex configurations, no steep learning curve—just deploy and go.
 

@@ -1,10 +1,12 @@
-# Dock-Boy
+<div align="center">
+<h1>Dock-Boy</h1>
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/d3witt/dockboy)](https://goreportcard.com/report/github.com/d3witt/dockboy)
 [![Go Reference](https://pkg.go.dev/badge/github.com/d3witt/dockboy.svg)](https://pkg.go.dev/github.com/d3witt/dockboy)
 ![GitHub release](https://img.shields.io/github/v/release/d3witt/dockboy)
 
-Dock-Boy is a tiny deployment tool for small teams that works anywhere.
+<h3>Break down the barriers between you and your server<h3/>
+</div>
 
 Built on Docker Swarm and Caddy, it sets up everything automatically and gets your apps running with minimal fuss. No complex configurations, no steep learning curve—just deploy and go.
 
@@ -114,7 +116,7 @@ name = 'dockboy-web'
 image = 'dockboy-web:latest'
 
 [public]
-address = ':80'
+address = ':80' # for domains: 'mydomain.com'
 target_port = 80
 
 [env]
